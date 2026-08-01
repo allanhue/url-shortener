@@ -37,17 +37,17 @@ export default function URLShortenerForm({ onCreated }: { onCreated: () => void 
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         placeholder="Paste a long URL..."
-        className="border rounded-md px-3 py-2"
+        className="w-full rounded-3xl border border-slate-300 bg-white px-4 py-3 text-slate-950 outline-none transition focus:border-slate-950 focus:ring-2 focus:ring-slate-200"
         required
       />
-      <button type="submit" className="bg-black text-white rounded-md py-2">
+      <button type="submit" className="rounded-3xl bg-slate-950 px-5 py-3 text-white transition hover:bg-slate-800">
         Shorten
       </button>
       {error && <p className="text-red-500 text-sm">{error}</p>}
       {result && (
-        <p className="text-sm">
+        <p className="text-sm text-slate-950">
           Short link:{" "}
-          <a href={result} target="_blank" className="text-blue-600 underline">
+          <a href={result} target="_blank" className="text-slate-950 underline">
             {result}
           </a>
         </p>

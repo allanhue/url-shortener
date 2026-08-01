@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   }
 
   const shortCode = generateShortCode();
-  const record = db.create(shortCode, url);
+  const record = await db.create(shortCode, url);
 
   return NextResponse.json({
     shortCode: record.shortCode,
@@ -20,5 +20,5 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  return NextResponse.json(db.getAll());
+  return NextResponse.json(await db.getAll());
 }
