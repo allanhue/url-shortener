@@ -21,53 +21,51 @@ export default function Home() {
   const recentLinks = links.slice(0, 5);
 
   return (
-    <main className="max-w-6xl mx-auto py-16 px-4">
-      <section className="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-lg">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl space-y-6 text-slate-950">
-            <p className="inline-flex rounded-full bg-sky-500/10 px-4 py-2 text-sm font-semibold text-sky-700">
-              Fast, secure, and data-driven
+    <main className="max-w-7xl mx-auto py-16 px-4">
+      <section className="grid gap-10 rounded-[2rem] border border-slate-200 bg-white p-10 shadow-[0_30px_80px_rgba(15,23,42,0.08)] lg:grid-cols-[1.2fr_0.9fr]">
+        <div className="space-y-6 text-slate-950">
+        
+          <div className="space-y-4">
+            <h1 className="text-5xl font-semibold tracking-tight">
+              Sharp professional short links with built-in sharing.
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-slate-600">
+              Generate polished short URLs, monitor performance and instantly share via QR code from the same beautiful interface.
             </p>
-            <div>
-              <h1 className="text-4xl font-semibold sm:text-5xl">
-                Shorten links, track clicks, and grow with confidence.
-              </h1>
-              <p className="mt-4 text-slate-600 sm:text-lg">
-                Create branded short URLs instantly and see real-time analytics on your most popular links.
-              </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Links created</p>
+              <p className="mt-3 text-3xl font-semibold text-slate-950">{links.length}</p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
-                <p className="text-3xl font-semibold text-slate-950">{links.length}</p>
-                <p className="mt-2 text-sm text-slate-500">Links created</p>
-              </div>
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
-                <p className="text-3xl font-semibold text-slate-950">{links.reduce((sum, link) => sum + link.clicks.length, 0)}</p>
-                <p className="mt-2 text-sm text-slate-500">Total clicks</p>
-              </div>
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Total clicks</p>
+              <p className="mt-3 text-3xl font-semibold text-slate-950">{links.reduce((sum, link) => sum + link.clicks.length, 0)}</p>
             </div>
           </div>
-          <div className="w-full max-w-md rounded-[2rem] bg-slate-50 p-8 shadow-sm ring-1 ring-slate-200">
-            <h2 className="text-xl font-semibold text-slate-950">Shorten your first URL</h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Paste any link to generate a short URL with analytics tracking and fast redirect routing.
-            </p>
-            <div className="mt-6">
-              <URLShortenerForm onCreated={fetchLinks} />
-            </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold text-slate-950">Shorten a link</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Create a short link and get a share-ready QR code immediately after shortening.
+          </p>
+          <div className="mt-6">
+            <URLShortenerForm onCreated={fetchLinks} />
           </div>
         </div>
       </section>
 
-      <section className="mt-14 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg">
+      <section className="mt-14 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_20px_40px_rgba(15,23,42,0.06)]">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-2xl font-semibold text-slate-950">Recent links</h2>
             <p className="mt-2 text-sm text-slate-600">
-              A quick view of the latest URLs you've shortened with usage data.
+              Quickly access your latest shortened URLs and view click activity at a glance.
             </p>
           </div>
-          <a href="/dashboard" className="inline-flex items-center rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-400">
+          <a href="/dashboard" className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
             View full analytics
           </a>
         </div>
