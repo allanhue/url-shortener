@@ -1,6 +1,6 @@
-# URL Shortener + Analytics Dashboard
+# URL Shortener with Analytics Dashboard
 
-A Next.js 14 (App Router) URL shortener with a click-analytics dashboard.
+A Next.js  URL shortener with a click-analytics dashboard.
 
 ## Setup
 
@@ -19,8 +19,4 @@ Then open http://localhost:3000
 - Styling uses Tailwind CSS (already configured).
 - Charting uses Recharts (already in package.json).
 
-## Next steps (data science ideas)
 
-- Add a `predictive/` module for fraud/spam link detection using click patterns.
-- Stream click events into Kafka/Spark for real-time dashboards at scale.
-- Add geo-IP lookups on click events for location-based analytics.
