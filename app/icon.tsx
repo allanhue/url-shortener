@@ -1,13 +1,20 @@
-import { SVGProps } from "react";
+import { ImageResponse } from "next/og";
 
-export default function Icon(props: SVGProps<SVGSVGElement>) {
-  return (
+export const size = {
+  width: 64,
+  height: 64,
+};
+
+export const contentType = "image/png";
+
+export default function Icon() {
+  return new ImageResponse(
+    (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
       fill="none"
       aria-hidden="true"
-      {...props}
     >
       <rect width="64" height="64" rx="16" fill="#0f172a" />
       <path
@@ -30,5 +37,7 @@ export default function Icon(props: SVGProps<SVGSVGElement>) {
         strokeLinecap="round"
       />
     </svg>
+    ),
+    size,
   );
 }
