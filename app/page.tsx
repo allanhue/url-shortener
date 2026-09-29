@@ -26,9 +26,9 @@ export default function Home() {
         <div className="space-y-6 text-slate-950">
         
           <div className="space-y-4">
-            <h1 className="text-5xl font-semibold tracking-tight">
+            {/* <h1 className="text-5xl font-semibold tracking-tight">
               Sharp professional short links with built-in sharing.
-            </h1>
+            </h1> */}
             <p className="max-w-2xl text-lg leading-8 text-slate-600">
               Generate polished short URLs, monitor performance and instantly share via QR code from the same beautiful interface.
             </p>
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="rounded-3xl border border-dashed border-slate-200 bg-slate-50 p-12 text-center text-slate-500">
-              No links yet — shorten one to see analytics and saved entries here.
+              No links yet !.
             </div>
           )}
         </div>
