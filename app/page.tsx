@@ -26,12 +26,7 @@ export default function Home() {
         <div className="space-y-6 text-slate-950">
         
           <div className="space-y-4">
-            {/* <h1 className="text-5xl font-semibold tracking-tight">
-              Sharp professional short links with built-in sharing.
-            </h1> */}
-            <p className="max-w-2xl text-lg leading-8 text-slate-600">
-              Generate polished short URLs, monitor performance and instantly share via QR code from the same beautiful interface.
-            </p>
+          
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -48,9 +43,7 @@ export default function Home() {
 
         <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-950">Shorten a link</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Create a short link and get a share-ready QR code immediately after shortening.
-          </p>
+
           <div className="mt-6">
             <URLShortenerForm onCreated={fetchLinks} />
           </div>
@@ -61,9 +54,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-2xl font-semibold text-slate-950">Recent links</h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Quickly access your latest shortened URLs and view click activity at a glance.
-            </p>
+         
           </div>
           <a href="/dashboard" className="inline-flex items-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
             View full analytics
